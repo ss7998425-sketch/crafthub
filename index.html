@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1bd96a">
+  <title>CraftHub — Minecraft Projects</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="CraftHub home">
+      <span class="brand-mark">✦</span><span>Craft<span>Hub</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <button class="nav-link active" data-type="mod">Mods</button>
+      <button class="nav-link" data-type="plugin">Plugins</button>
+      <button class="nav-link" data-type="resourcepack">Resource Packs</button>
+    </nav>
+    <div class="top-actions">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" title="Theme">◐</button>
+      <a class="source-link" href="https://modrinth.com" target="_blank" rel="noopener">Modrinth ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> MINECRAFT COMMUNITY DISCOVERY</div>
+        <h1>Find your next<br><span>favorite project.</span></h1>
+        <p>Discover Minecraft mods, server plugins and resource packs.</p>
+        <form id="searchForm" class="searchbar">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="search" placeholder="Search projects..." autocomplete="off" aria-label="Search projects">
+          <button type="submit">Search</button>
+        </form>
+        <div class="hero-tags">
+          <span>Explore</span><span>Discover</span><span>Build</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="cube"><div class="cube-face front">✦</div><div class="cube-face side"></div><div class="cube-face top"></div></div>
+        <span class="float-tag tag-a">MODS</span><span class="float-tag tag-b">PLUGINS</span><span class="float-tag tag-c">PACKS</span>
+      </div>
+    </section>
+
+    <section class="content-wrap">
+      <div class="section-head">
+        <div><div class="eyebrow muted">BROWSE LIBRARY</div><h2 id="sectionTitle">Popular Mods</h2></div>
+        <label class="sort-wrap">Sort by
+          <select id="sortSelect">
+            <option value="relevance">Relevance</option>
+            <option value="downloads">Most downloads</option>
+            <option value="follows">Most followed</option>
+            <option value="newest">Newest</option>
+            <option value="updated">Recently updated</option>
+          </select>
+        </label>
+      </div>
+      <div class="filter-row">
+        <button class="filter-chip selected" data-type="mod">Mods</button>
+        <button class="filter-chip" data-type="plugin">Plugins</button>
+        <button class="filter-chip" data-type="resourcepack">Resource Packs</button>
+        <span class="result-count" id="resultCount"></span>
+      </div>
+      <div id="status" class="status"><span class="spinner"></span> Loading projects…</div>
+      <div id="projectGrid" class="project-grid" aria-live="polite"></div>
+      <div class="pagination">
+        <button id="prevBtn" class="page-btn" disabled>← Previous</button>
+        <span id="pageLabel">Page 1</span>
+        <button id="nextBtn" class="page-btn">Next →</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><span class="brand-mark">✦</span> CraftHub</div>
+    <p>Independent Minecraft project discovery interface.</p>
+    <p class="disclaimer">Project data is provided by the Modrinth API. CraftHub is not affiliated with or endorsed by Modrinth.</p>
+    <a href="https://docs.modrinth.com/api/" target="_blank" rel="noopener">API documentation ↗</a>
+  </footer>
+
+  <dialog id="projectDialog" class="project-dialog">
+    <button id="closeDialog" class="dialog-close" aria-label="Close">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+  <script src="js/app.js"></script>
+</body>
+</html>
